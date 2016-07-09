@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.Serialization;
 
-namespace Replace.Framework.Common.Security
+namespace Last.Framework.Common.Security
 {
     public class SecurityException : Exception, ISerializable
     {

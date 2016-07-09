@@ -1,4 +1,4 @@
-﻿namespace Replace.Framework.Utility.PaddedString
+﻿namespace Last.Framework.Utility.PaddedString
 {
     public interface IPaddedString
     {

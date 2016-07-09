@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Replace.Framework.Common.Security
+namespace Last.Framework.Common.Security
 {
     public class TransferBuffer : IDisposable
     {

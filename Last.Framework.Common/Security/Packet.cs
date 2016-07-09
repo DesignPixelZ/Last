@@ -1,11 +1,11 @@
-﻿using Replace.Framework.Utility;
-using Replace.Framework.Utility.PaddedString;
+﻿using Last.Framework.Utility;
+using Last.Framework.Utility.PaddedString;
 using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Text;
 
-namespace Replace.Framework.Common.Security
+namespace Last.Framework.Common.Security
 {
     public class Packet : IDisposable
     {

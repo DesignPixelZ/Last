@@ -1,10 +1,9 @@
-﻿using Replace.Framework.Utility;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.InteropServices;
 
-namespace Replace.Framework.Common.Security
+namespace Last.Framework.Common.Security
 {
     public class SecurityManager
     {
@@ -1144,8 +1143,8 @@ namespace Replace.Framework.Common.Security
                                 byte expected_count = GenerateCountByte(true);
                                 if (packet_security_count != expected_count)
                                 {
-                                    //throw (new Exception("[SecurityAPI::Recv] Count byte mismatch on {packet_opcode.ToString("X4")}."));
-                                    StaticLogger.Network.Warn($"[SecurityAPI::Recv] Count byte mismatch on {packet_opcode.ToString("X4")}. (Expected: {expected_count}, Packet: {packet_security_count})");
+                                    throw (new Exception($"[SecurityAPI::Recv] Count byte mismatch on {packet_opcode.ToString("X4")}."));
+                                    //StaticLogger.Network.Warn($"[SecurityAPI::Recv] Count byte mismatch on {packet_opcode.ToString("X4")}. (Expected: {expected_count}, Packet: {packet_security_count})");
                                 }
 
                                 if (packet_encrypted || (m_security_flags.security_bytes == 1 && m_security_flags.blowfish == 0))
@@ -1162,8 +1161,8 @@ namespace Replace.Framework.Common.Security
                                 byte expected_crc = GenerateCheckByte(buffer.Buffer);
                                 if (packet_security_crc != expected_crc)
                                 {
-                                    //throw (new SecurityException("SecurityManager::Recv->CRC byte mismatch."));
-                                    StaticLogger.Instance.Warn($"[SecurityAPI::Recv] CRC byte mismatch on {packet_opcode.ToString("X4")}. (Expected: {expected_crc}, Packet: {packet_security_crc})");
+                                    throw (new SecurityException($"[SecurityManager::Recv] CRC byte mismatch on {packet_opcode.ToString("X4")}."));
+                                    //StaticLogger.Instance.Warn($"[SecurityAPI::Recv] CRC byte mismatch on {packet_opcode.ToString("X4")}. (Expected: {expected_crc}, Packet: {packet_security_crc})");
                                 }
 
                                 buffer.Buffer[4] = 0;

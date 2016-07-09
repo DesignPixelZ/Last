@@ -1,6 +1,6 @@
 ﻿using System.IO;
 
-namespace Replace.Framework.Common.Security
+namespace Last.Framework.Common.Security
 {
     internal class PacketReader : BinaryReader
     {

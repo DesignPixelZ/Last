@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace Replace.Framework.Utility.PaddedString
+namespace Last.Framework.Utility.PaddedString
 {
     [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi, Pack = 1)]
     public struct PaddedString256 : IPaddedString

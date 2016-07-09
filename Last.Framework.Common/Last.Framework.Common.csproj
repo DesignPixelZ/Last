@@ -51,6 +51,12 @@
     <Compile Include="Security\SecurityManager.cs" />
     <Compile Include="Security\TransferBuffer.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Last.Framework.Utility\Last.Framework.Utility.csproj">
+      <Project>{113202a9-0a51-4797-8334-c935ce7005e5}</Project>
+      <Name>Last.Framework.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
