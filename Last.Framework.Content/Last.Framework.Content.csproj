@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9FC2B78A-88CC-458A-99F7-6AAD09B7A07F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Last.Framework.Content</RootNamespace>
+    <AssemblyName>Last.Framework.Content</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SharpDX, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.3.0.2\lib\net45\SharpDX.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpDX.Mathematics, Version=3.0.2.0, Culture=neutral, PublicKeyToken=b4dcf0f35e5521f1, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpDX.Mathematics.3.0.2\lib\net45\SharpDX.Mathematics.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BinaryReaderExtensions.cs" />
+    <Compile Include="BinaryWriterExtensions.cs" />
+    <Compile Include="Common\ObjectIndexEntry.cs" />
+    <Compile Include="Common\ObjectIndexFile.cs" />
+    <Compile Include="ContentManager.cs" />
+    <Compile Include="ContentPurpose.cs" />
+    <Compile Include="ContentSource.cs" />
+    <Compile Include="Data\Compound\CompoundFile.cs" />
+    <Compile Include="Data\Compound\CompoundOffsets.cs" />
+    <Compile Include="Data\Mesh\MeshCollisionCell.cs" />
+    <Compile Include="Data\Mesh\MeshCollisionFlag.cs" />
+    <Compile Include="Data\Mesh\MeshCollisionLink.cs" />
+    <Compile Include="Data\Mesh\MeshCollisionVertex.cs" />
+    <Compile Include="Data\Mesh\MeshFile.cs" />
+    <Compile Include="Data\Mesh\MeshFlags.cs" />
+    <Compile Include="Data\Mesh\MeshOffsets.cs" />
+    <Compile Include="Data\NavMesh\NavMeshCell.cs" />
+    <Compile Include="Data\NavMesh\NavMeshCellLink.cs" />
+    <Compile Include="Data\NavMesh\NavMeshEntry.cs" />
+    <Compile Include="Data\NavMesh\NavMeshEntryCollision.cs" />
+    <Compile Include="Data\NavMesh\NavMeshFile.cs" />
+    <Compile Include="Data\NavMesh\NavMeshLineDirection.cs" />
+    <Compile Include="Data\NavMesh\NavMeshLineFlag.cs" />
+    <Compile Include="Data\NavMesh\NavMeshRegionLink.cs" />
+    <Compile Include="Data\Resource\ResourceFile.cs" />
+    <Compile Include="Data\Resource\ResourceFlags.cs" />
+    <Compile Include="Data\Resource\ResourceOffsets.cs" />
+    <Compile Include="Data\Resource\ResourceType.cs" />
+    <Compile Include="ContentFile.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Common\default.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\Animation\" />
+    <Folder Include="Data\Dungeon\" />
+    <Folder Include="Data\Material\" />
+    <Folder Include="Data\Skeleton\" />
+    <Folder Include="Map\" />
+    <Folder Include="Particle\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Last.Framework.Utility\Last.Framework.Utility.csproj">
+      <Project>{113202a9-0a51-4797-8334-c935ce7005e5}</Project>
+      <Name>Last.Framework.Utility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
